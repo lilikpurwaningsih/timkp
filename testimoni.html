@@ -7,119 +7,117 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-}
+        .container {
+            display: flex;
+            height: 100vh;
+        }
 
-.container {
-    display: flex;
-    height: 100vh;
-}
+        .sidebar {
+            width: 250px;
+            background-color: #007BFF; /* Blue */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
 
-.sidebar {
-    width: 250px;
-    background-color: #007BFF; /* Blue */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-}
+        .sidebar .admin {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #f0f8ff;
+        }
 
-.sidebar .admin {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #f0f8ff;
-}
+        .menu-item {
+            text-decoration: none;
+            color: white;
+            padding: 15px 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
 
-.menu-item {
-    text-decoration: none;
-    color: white;
-    padding: 15px 10px;
-    margin: 10px 0;
-    border-radius: 8px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    text-align: center;
-}
+        .menu-item:hover, .menu-item.active {
+            background-color: #0056b3; /* Darker Blue */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
 
-.menu-item:hover, .menu-item.active {
-    background-color: #0056b3; /* Darker Blue */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
+        .content {
+            padding: 2rem;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column; /* Pusatkan secara horizontal */
+            align-items: center;
+        }
 
-.content {
-    padding: 2rem;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column; /* Pusatkan secara horizontal */
-    align-items: center;
-}
+        .cards {
+            display: flex;
+            justify-content: center; /* Pusatkan kartu secara horizontal */
+            gap: 150px; /* Tambahkan jarak antar kartu */
+            margin-bottom: 2rem;
+            flex-wrap: wrap; /* Bungkus kartu ke baris berikutnya jika diperlukan */
+            margin-left: 2.5rem;
+        }
 
-.cards {
-    display: flex;
-    justify-content: center; /* Pusatkan kartu secara horizontal */
-    gap: 150px; /* Tambahkan jarak antar kartu */
-    margin-bottom: 2rem;
-    flex-wrap: wrap; /* Bungkus kartu ke baris berikutnya jika diperlukan */
-    margin-left: 2.5rem;
-}
+        .card {
+            background-color: #e9ecef;
+            border: 1px solid #000000;
+            padding: 1rem;
+            text-align: center;
+            width: 150px;
+            color: #000000;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
 
-.card {
-    background-color: #e9ecef;
-    border: 1px solid #000000;
-    padding: 1rem;
-    text-align: center;
-    width: 150px;
-    color: #000000;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-.card:hover {
-    transform: translateY(-5px);
-}
+        .card .number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
 
-.card .number {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
+        .logo-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            margin-left: 2.5rem;
+        }
 
-.logo-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    margin-left: 2.5rem;
-}
+        .logo {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #000000;
+            font-weight: bold;
+        }
 
-.logo {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-    font-weight: bold;
-}
-
-footer {
-    text-align: center;
-    margin-top: 5rem;
-    color: #000000;
-    font-weight: bold;
-    margin-left: 2.5rem;
-}
-
+        footer {
+            text-align: center;
+            margin-top: 5rem;
+            color: #000000;
+            font-weight: bold;
+            margin-left: 2.5rem;
+        }
     </style>
 </head>
 <body>
@@ -131,19 +129,19 @@ footer {
                 <a href="#" class="menu-item">Data Penduduk</a>
                 <a href="#" class="menu-item">Surat</a>
                 <a href="#" class="menu-item">Logout</a>
-        </div>
+            </div>
         <div class="content">
             <div class="cards">
                 <div class="card">
-                    <p class="number">0</p>
+                    <p class="number" id="dataPenduduk">0</p>
                     <p>Data Penduduk</p>
                 </div>
                 <div class="card">
-                    <p class="number">0</p>
+                    <p class="number" id="permintaanSurat">0</p>
                     <p>Permintaan Surat</p>
                 </div>
                 <div class="card">
-                    <p class="number">0</p>
+                    <p class="number" id="suratSelesai">0</p>
                     <p>Surat Selesai</p>
                 </div>
             </div>
@@ -158,5 +156,31 @@ footer {
             </footer>
         </div>
     </div>
+    <script>
+        // URL Google Sheets JSON
+        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUqnFK7KycXJK2x73pZaPTQP_YA7GmmoYA1SQguphfRrCb3ZVbW1BkKHjowHDaLZWgY3GB5Ws0qR_3/pubhtml/gviz/tq?tqx=out:json';
+
+        // Ambil data dari Google Sheets
+        fetch(sheetUrl)
+            .then(response => response.text())
+            .then(data => {
+                // Parse JSONP data
+                const jsonpData = data.substring(47).slice(0, -2);
+                const json = JSON.parse(jsonpData);
+
+                // Ambil data dari sheet
+                const rows = json.table.rows;
+
+                // Update data penduduk, permintaan surat, dan surat selesai
+                const dataPenduduk = rows[0].c[0].v;
+                const permintaanSurat = rows[0].c[1].v;
+                const suratSelesai = rows[0].c[2].v;
+
+                document.getElementById('dataPenduduk').textContent = dataPenduduk;
+                document.getElementById('permintaanSurat').textContent = permintaanSurat;
+                document.getElementById('suratSelesai').textContent = suratSelesai;
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
 </body>
 </html>
