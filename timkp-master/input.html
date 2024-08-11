@@ -1,36 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Registration Form</title>
-  </head>
-  <body>
-    <form id="registrationForm">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br>
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br>
-      <label for="phone">Phone:</label><br>
-      <input type="text" id="phone" name="phone" required><br><br>
-      <input type="submit" id="submit" value="Submit">
-    </form>
+<head>
+	<link rel="stylesheet" href="input.css">
+</head>
+<body>
+	<div class="container">
+		<form method="post" action="" name="contact-form">
+			<h4>Contact Us</h4>
+			<input type="text" name="your-name" placeholder="Name">
+			<input type="text" name="your-number" placeholder="Number">
+			<input type="email" name="your-email" placeholder="Email">
+			<textarea name="message" rows="7" placeholder="Your Message"></textarea>
+			<input type="submit" value="Submit" id="submit">
+		</form>
+	</div>
 
-    <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzluKWXAasHMLSFt_i5U-wfTw15t-V6HtpNPRlln0YAxJlRGrVZUkrhfvkdlMv_HHodNg/exec';
-      const form = document.getElementById('registrationForm');
-
-      form.addEventListener('submit', e => {
-        e.preventDefault(); // Mencegah halaman untuk memuat ulang
-        fetch(scriptURL, { 
-          method: 'POST', 
-          body: new FormData(form) 
-        })
-        .then(response => {
-          alert("Thank you! Your form is submitted successfully.");
-          form.reset(); // Mengatur ulang formulir setelah pengiriman
-          window.location.reload(); // Memuat ulang halaman (opsional)
-        })
-        .catch(error => console.error('Error!', error.message));
-      });
-    </script>
-  </body>
+	<script src="input.js"></script>
+</body>
 </html>
