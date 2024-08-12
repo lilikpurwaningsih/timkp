@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input Data Siswa</title>
+    <script>
+
+
+      function getData() {
+        var noAbsen = document.getElementById("noAbsen").value;
+        google.script.run.withSuccessHandler(updateForm).getStudentData(noAbsen);
+      }
+
+      function updateForm(data) {
+        if (data) {
+          document.getElementById("namaDepan").value = data.namaDepan;
+          document.getElementById("namaBelakang").value = data.namaBelakang;
+          document.getElementById("kelas").value = data.kelas;
+          document.getElementById("alamat").value = data.alamat;
+        } else {
+          document.getElementById("namaDepan").value = "Data tidak ditemukan";
+          document.getElementById("namaBelakang").value = "Data tidak ditemukan";
+          document.getElementById("kelas").value = "Data tidak ditemukan";
+          document.getElementById("alamat").value = "Data tidak ditemukan";
+        }
+      }
+    </script>
+  </head>
+  <body>
+        <h1>Input Data Siswa</h1>
+        <label for="noAbsen">Nomor Absen:</label>
+        <input type="text" id="noAbsen" value="101"><br><br>
+    
+        <button onclick="getData()">Cek Nomor Absen</button><br><br>
+    
+        <label for="namaDepan">Nama Depan:</label>
+        <input type="text" id="namaDepan" readonly value="Otomatis"><br><br>
+    
+        <label for="namaBelakang">Nama Belakang:</label>
+        <input type="text" id="namaBelakang" readonly value="Otomatis"><br><br>
+    
+        <label for="kelas">Kelas:</label>
+        <input type="text" id="kelas" readonly value="Otomatis"><br><br>
+    
+        <label for="alamat">Alamat:</label>
+        <input type="text" id="alamat" readonly value="Otomatis"><br><br>
+  
+    
+  </body>
+</html>
