@@ -1,49 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Input Data Siswa</title>
+<head>
+    <title>Form Cek NIK</title>
     <script>
-
-
-      function getData() {
-        var noAbsen = document.getElementById("noAbsen").value;
-        google.script.run.withSuccessHandler(updateForm).getStudentData(noAbsen);
-      }
-
-      function updateForm(data) {
-        if (data) {
-          document.getElementById("namaDepan").value = data.namaDepan;
-          document.getElementById("namaBelakang").value = data.namaBelakang;
-          document.getElementById("kelas").value = data.kelas;
-          document.getElementById("alamat").value = data.alamat;
-        } else {
-          document.getElementById("namaDepan").value = "Data tidak ditemukan";
-          document.getElementById("namaBelakang").value = "Data tidak ditemukan";
-          document.getElementById("kelas").value = "Data tidak ditemukan";
-          document.getElementById("alamat").value = "Data tidak ditemukan";
+        // Fungsi untuk memanggil Apps Script dan mengecek NIK
+        function cekNIK() {
+            var nik = document.getElementById("nik").value;
+            google.script.run.withSuccessHandler(fillForm).cekNIK(nik);
         }
-      }
+
+        // Fungsi untuk mengisi form jika NIK ditemukan
+        function fillForm(data) {
+            if (data) {
+                document.getElementById("nama").value = data.nama;
+                document.getElementById("tempatLahir").value = data.tempatLahir;
+                document.getElementById("tanggalLahir").value = data.tanggalLahir;
+                document.getElementById("pekerjaan").value = data.pekerjaan;
+                document.getElementById("alamat").value = data.alamat;
+                document.getElementById("jeniskelamin").value = data.jeniskelamin;
+                document.getElementById("agama").value = data.agama;
+                document.getElementById("tanggalsurat").value = data.tanggalsurat;
+                document.getElementById("phone").value = data.phone;
+            } else {
+                alert("NIK tidak ditemukan!");
+            }
+        }
+
+        // Fungsi untuk menyimpan data ke spreadsheet
+        function submitForm() {
+            var nik = document.getElementById("nik").value;
+            var nama = document.getElementById("nama").value;
+            var tempatLahir = document.getElementById("tempatLahir").value;
+            var tanggalLahir = document.getElementById("tanggalLahir").value;
+            var pekerjaan = document.getElementById("pekerjaan").value;
+            var alamat = document.getElementById("alamat").value;
+            var jeniskelamin = document.getElementById("jeniskelamin").value;
+            var agama = document.getElementById("agama").value;
+            var tanggalsurat = document.getElementById("tanggalsurat").value;
+            var phone = document.getElementById("phone").value;
+            google.script.run.submitForm(nik, nama, tempatLahir, tanggalLahir, pekerjaan, alamat,jeniskelamin,agama, tanggalsurat, phone);
+            alert("Data telah disimpan.");
+        }
     </script>
-  </head>
-  <body>
-        <h1>Input Data Siswa</h1>
-        <label for="noAbsen">Nomor Absen:</label>
-        <input type="text" id="noAbsen" value="101"><br><br>
-    
-        <button onclick="getData()">Cek Nomor Absen</button><br><br>
-    
-        <label for="namaDepan">Nama Depan:</label>
-        <input type="text" id="namaDepan" readonly value="Otomatis"><br><br>
-    
-        <label for="namaBelakang">Nama Belakang:</label>
-        <input type="text" id="namaBelakang" readonly value="Otomatis"><br><br>
-    
-        <label for="kelas">Kelas:</label>
-        <input type="text" id="kelas" readonly value="Otomatis"><br><br>
-    
-        <label for="alamat">Alamat:</label>
-        <input type="text" id="alamat" readonly value="Otomatis"><br><br>
-  
-    
-  </body>
+</head>
+<body>
+    <h2>Form Cek NIK</h2>
+    <form onsubmit="submitForm(); return false;">
+        <label for="nik">NIK:</label><br>
+        <input type="text" id="nik" name="nik"><br>
+        <button type="button" onclick="cekNIK()">Cek NIK</button><br><br>
+
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama"><br><br>
+
+        <label for="tempatLahir">Tempat Lahir:</label><br>
+        <input type="text" id="tempatLahir" name="tempatLahir"><br><br>
+
+        <label for="tanggalLahir">Tanggal Lahir:</label><br>
+        <input type="text" id="tanggalLahir" name="tanggalLahir"><br>
+
+        <label for="pekerjaan">Pekerjaan:</label><br>
+        <input type="text" id="pekerjaan" name="pekerjaan"><br>
+
+        <label for="alamat">Alamat:</label><br>
+        <input type="text" id="alamat" name="alamat"><br>
+
+        <label for="jeniskelamin">Jenis Kelamin:</label><br>
+        <input type="text" id="jeniskelamin" name="jeniskelamin"><br>
+
+        <label for="agama">Agama:</label><br>
+        <input type="text" id="agama" name="agama"><br>
+
+        <label for="tanggalsurat">Tanggal Surat:</label><br>
+        <input type="text" id="tanggalsurat" name="tanggalsurat"><br>
+
+        <label for="phone">No Hp:</label><br>
+        <input type="text" id="phone" name="phone"><br>
+
+        
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
 </html>
