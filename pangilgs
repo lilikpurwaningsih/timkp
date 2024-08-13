@@ -1,20 +1,31 @@
-function doGet(e) {
-  return HtmlService.createHtmlOutputFromFile('meranti');
+function doGet() {
+    return HtmlService.createHtmlOutputFromFile('meranti');
+}
+// Fungsi untuk mengecek NIK di spreadsheet
+function cekNIK(nik) {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("datauser");
+    var data = sheet.getDataRange().getValues();
+    
+    for (var i = 1; i < data.length; i++) {
+        if (data[i][0] == nik) { // Asumsi NIK ada di kolom pertama
+            return { 
+            nama: data[i][1], 
+            tempatLahir: data[i][2],
+            tanggalLahir: data[i][3], 
+            pekerjaan: data[i][4], 
+            alamat: data[i][5], 
+            jeniskelamin: data[i][6], 
+            agama: data[i][7], 
+            tanggalsurat: data[i][8], 
+            phone: data[i][9], 
+            }; // Asumsi nama di kolom kedua dan tempat lahir di kolom ketiga
+        }
+    }
+    return null;
 }
 
-function getStudentData(noAbsen) {
-  var sheet = SpreadsheetApp.openById('10KFQXUBf72qDkctYq_e5Xp4QZyULWXKIteRDAGhLP1E').getSheetByName('Sheet1');
-  var data = sheet.getDataRange().getValues();
-
-  for (var i = 1; i < data.length; i++) {
-    if (data[i][1].toString() === noAbsen) { // Memverifikasi nomor absen
-      return {
-        namaDepan: data[i][2],
-        namaBelakang: data[i][3],
-        kelas: data[i][4],
-        alamat: data[i][5]
-      };
-    }
-  }
-  return null;
+// Fungsi untuk menyimpan data ke spreadsheet
+function submitForm(nik, nama, tempatLahir, tanggalLahir, pekerjaan, alamat,jeniskelamin,agama, tanggalsurat, phone) {
+    var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("suratmasuk");
+    sheet.appendRow([nik, nama, tempatLahir, tanggalLahir, pekerjaan, alamat,jeniskelamin,agama, tanggalsurat, phone]);
 }
