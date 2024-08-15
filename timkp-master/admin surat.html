@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #F4F4F4;
+        }
+
+        .container-fluid {
+          display: flex;
+          height: 630px;
+          padding: 0;
+
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #E6F2FF; /* Blue */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers content horizontally */
+            padding: 10px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border: 1px solid #cbcbcb;
+        }
+
+        .sidebar img {
+            width: 100%; /* Menyesuaikan gambar dengan lebar sidebar */
+            max-width: 7em; /* Membatasi lebar maksimum gambar */
+            height: auto;
+        }
+
+        .sidebar .admin {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #000000;
+        }
+
+        .menu-item {
+            text-decoration: none;
+            color: #0056b3;
+            padding: 8px 30px;
+            margin: 10px 0;
+            border-radius: 15px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            text-align: left;
+            display: flex;
+            width: 100%;
+            align-items: center; /* Keep icon and text vertically aligned */
+            justify-content: flex-start; /* Align content to the left */
+        }
+
+        .menu-item i {
+            color: #0056b3;
+            margin-right: 12px;
+        }
+
+        .menu-item:hover, .menu-item.active {
+            background-color: #0056b3; /* Darker Blue */
+            color: #ffffff;
+        }
+
+        .menu-item:hover i, .menu-item.active i {
+            color: white;
+        }
+
+        .content {
+          display: flex;
+          flex: 1; /* Occupy all the available space */
+          margin: 20px;
+          width: 100%;
+        }
+
+        .card {
+            background-color: #ffffff; /* Blue */
+            border: 1px solid #cbcbcb;
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 10px;
+            
+        }
+
+        .card:hover{
+          transform: none;
+        }
+
+        .card-header{
+          display: flex;
+          align-items: center;
+          font-size: 20px;
+          color: #000000;
+          background-color: #E6F2FF;
+          margin: 0;
+          justify-content: space-between;
+        }
+        .content {
+          display: flex;
+          flex: 1; /* Occupy all the available space */
+          margin: 20px;
+          margin-bottom: 0;
+          width: 100%;
+        }
+        
+        .cards {
+            display: flex;
+            background-color: transparent;
+            border: 1px solid #000000;
+            padding: 1rem;
+            text-align: left;
+            width: 280px;
+            color: #000000;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        .cards:hover{
+            transform: translateY(-5px);
+        }
+        .row-cards{
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            justify-content: space-between;
+        }
+        .custom-icon {
+            font-size: 5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Agar teks dan icon sejajar secara vertikal */
+            margin: 0; /* Menghapus margin default pada elemen <p> */
+        }
+        .number {
+            font-size: 28px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="sidebar">
+            <img src="1.png" alt="Logo Agro Kopiko Meranti">
+            <div class="admin">Admin</div>
+            <a href="#" class="menu-item"><i class="fa-solid fa-gauge"></i>Dashboard</a>
+            <a href="#" class="menu-item"><i class="fas fa-user"></i>Data Penduduk</a>
+            <a href="#" class="menu-item active"><i class="fas fa-envelope-open-text"></i>Surat</a>
+            <a href="#" class="menu-item"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            <div class="card">
+                <div class="card-header">
+                    Kelola Surat
+                </div>
+                <div class="row-cards">
+                    <div class="cards">
+                        <div>
+                            <p class="number" style="color: #3AB57A;">0</p>
+                            <p>Surat Diterima</p>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-file-lines custom-icon" style="color: #3AB57A;"></i>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <p class="number" style="color: #FFA34E;">0</p>
+                            <p>Surat Diproses</p>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-file-lines custom-icon" style="color: #FFA34E;"></i>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <p class="number" style="color: #FF0000;">0</p>
+                            <p>Surat Ditolak</p>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-file-lines custom-icon" style="color: #FF0000;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/36e1157cf2.js" crossorigin="anonymous"></script>
+</body>
+</html>
