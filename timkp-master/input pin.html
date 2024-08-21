@@ -97,11 +97,10 @@
           <p>Masukkan PIN anda untuk lanjut membuat surat</p>
           <form method="post" action="" name="PIN">
               <div class="mb-3">
-                <div class="alert alert-danger" id="login-error">PIN salah</div>
                   <label class="form-label">PIN</label>
                   <input type="password" id="pin" class="form-control form-control-md" name="Nama" placeholder="contoh: 010101">
               </div>
-              <a href="buat surat user2.html" class="btn btn-primary" onclick="login()" style="width: 5.7em; justify-content: center;">Kirim</a>
+              <a href="" class="btn btn-primary" onclick="login()" style="width: 5.7em; justify-content: center;">Kirim</a>
               <p style="text-align: left; font-style: italic; font-weight: 300; font-size: 15px; margin-top: 20px; margin-bottom: 10px;">jika anda belum mempunyai PIN silahkan registrasi disini</p>
               <a href="registrasi.html" class="btn btn-primary" style="width: 5.7em;">Registrasi</a>
               <hr style="margin: 20px 0;">
@@ -135,7 +134,7 @@
               .then(response => response.text())
               .then(result => {
                   if (result === 'success') {
-                      window.location.href = 'buat surat.html'; // Redirect to dashboard or another page
+                      window.location.href = 'buat surat user2.html'; // Redirect to dashboard or another page
                   } else {
                       document.getElementById('login-error').style.display = 'block';
                   }
