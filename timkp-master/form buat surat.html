@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    label {
+      font-weight: 500;
+      margin-top: 15px;
+    }
+    .navbar{
+        width: 100%;
+        background-color: #ffffff;
+        border: 1px solid #2D83B6;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        padding-top: 0;
+    }
+    .navbar img{
+      width: 190px;
+      margin-left: 20px;
+    }
+    .menu-item {
+      margin-right: 20px;
+    }
+    .menu-item a {
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      color: #015C93;
+      padding: 8px 30px;
+      border-radius: 15px;
+      margin: 0;
+    }
+    .menu-item a:hover {
+      background-color: #2D83B6; /* Darker Blue */
+      color: #ffffff;
+    }
+    .dropdown-toggle::after {
+      display: none;
+    }
+    .content {
+        display: flex;
+        flex: 1; /* Occupy all the available space */
+        margin: 20px;
+        justify-content: center;
+    }
+
+    .card {
+        margin-top: 70px;
+        background-color: #ffffff;
+        border: 1px solid #cbcbcb;
+        width: 70%;
+        max-width: 100%; /* Ubah dari fixed width menjadi fleksibel */
+        padding: 1rem;
+        box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.228);
+    }
+
+    .card:hover{
+        transform: none;
+    }
+
+    .card-header{
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        color: #000000;
+        background-color: #E6F2FF;
+        margin: 0;
+        justify-content: space-between;
+    }
+    .card .row{
+        display: flex;
+        margin-top: 5px;
+        text-align: left;
+    }
+    .mb-3 .form-control{
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+        
+    }
+    .mb-3 .form-label{
+        margin-bottom: 2px;
+        color: #000000;
+        font-size: 14px;
+    }
+    .row1{
+        display: flex;
+        flex-direction: column;
+    }
+    .row1 input{
+        width: 15em;
+        border: 1px solid #cbcbcb;
+        border-radius: 4px;
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+    }
+    .row1 button{
+        width: 6em;
+    }
+    
+  </style>
+  </head>
+
+
+  <body>
+    <nav class="navbar fixed-top">
+        <div class="container-fluid">
+            <img src="logo web.png" alt="RETE MERANTI">
+            <div class="menu-item">
+                <a href="#beranda">Beranda</a>
+                <a href="#">Registrasi</a>
+                <a href="#tentang-kami">Tentang Kami</a>
+                
+                <!-- Dropdown untuk pilihan role -->
+                <div class="dropdown d-inline-block">
+                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #2D83B6; border-radius: 15px; color: #ffffff; margin-right: 20px;">
+                        Masuk
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><p style="font-weight: 600; text-align: center;">Masuk Sebagai:</p></li>
+                        <li><a class="dropdown-item" href="#">RT</a></li>
+                        <li><a class="dropdown-item" href="#">Sekretaris</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div class="card">
+        <div class="card-header" id="cardTitle">
+          <!-- Judul akan diganti berdasarkan jenis surat -->
+        </div>
+            <div class="card-body">
+                <form onsubmit="submitForm(); return false;">
+                  <div class="row1">
+                      <label for="nik" style="font-weight: 500; margin-bottom: 10px; font-size: 14px;">Masukkan NIK (Nomor Induk Kependudukan):</label>
+                      <input class="form-control form-control-md" type="text" id="nik" name="nik">
+                      <button class="btn btn-primary"  type="button" onclick="cekNIK()" style="font-size: 14px;">Cek NIK</button>
+                  </div>
+                    <div class="row">
+                      <p style="text-align: left; font-style: italic; font-weight: 400; font-size: 15px; margin-top: 20px; margin-bottom: 10px;">
+                          Pastikan data anda yang muncul sudah benar, jika benar silahkan klik tombol kirim.
+                      </p>
+                      <div class="col-md-6">
+                          <div class="mb-3">
+                              <label class="form-label" for="nama">Nama</label>
+                              <input type="text" class="form-control form-control-md" name="nama">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label" for="tempatLahir">Tempat Lahir</label>
+                              <input type="text" class="form-control form-control-md" id="tempatLahir" name="tempatLahir">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label" for="tanggalLahir">Tanggal Lahir</label>
+                              <input type="text" class="form-control form-control-md" id="tanggalLahir" name="tanggalLahir">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label" for="pekerjaan">Pekerjaan</label>
+                              <input type="text" class="form-control form-control-md" id="pekerjaan" name="pekerjaan">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label" for="alamat">Alamat</label>
+                              <input type="text" class="form-control form-control-md" id="alamat" name="alamat">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label" for="jeniskelamin">Jenis Kelamin</label>
+                              <input type="text" class="form-control form-control-md" id="jeniskelamin" name="jeniskelamin">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label" for="agama">Agama</label>
+                              <input type="text" class="form-control form-control-md" id="agama" name="agama">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label" for="tanggalsurat">Tanggal Surat</label>
+                              <input type="date" class="form-control form-control-md" id="tanggalsurat" name="tanggalsurat">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label" for="phone">No Hp</label>
+                              <input type="text" class="form-control form-control-md" id="phone" name="phone">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="mb-3">
+                              <label class="form-label">Silahkan Masukkan Nomor Rumah</label>
+                              <input type="text" class="form-control form-control-md" id="nomorrumah" name="nomorrumah" placeholder="Contoh: Nomor D.11">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label">Tinggal Sejak Kapan</label>
+                              <input type="text" class="form-control form-control-md" id="nomorrumah" name="nomorrumah" placeholder="Contoh: Januari 2000">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label">Tinggal Sampai Kapan</label>
+                              <input type="text" class="form-control form-control-md" id="nomorrumah" name="nomorrumah" placeholder="Contoh: Desember 2024">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label">Keperluan Surat</label>
+                              <textarea type="text" class="form-control form-control-md" id="nomorrumah" name="nomorrumah" placeholder="Contoh: Kelengkapan Administrasi Melamar Pekerjaan" row="4"></textarea>
+                          </div>
+                      </div>
+                </div>
+                <div class="text-start">
+                    <a class="btn btn-secondary" href="buat surat user2.html" role="button">Batal</a>
+                    <input type="submit" class="btn btn-primary" value="Kirim" id="submit">
+                </div>
+                </form>
+            </div>
+        </div>
+      </div>
+
+      <script>
+        // Fungsi untuk memanggil Apps Script dan mengecek NIK
+        function cekNIK() {
+            var nik = document.getElementById("nik").value;
+            google.script.run.withSuccessHandler(fillForm).cekNIK(nik);
+        }
+  
+        // Fungsi untuk mengisi form jika NIK ditemukan
+        function fillForm(data) {
+            if (data) {
+                document.getElementById("nama").value = data.nama;
+                document.getElementById("tempatLahir").value = data.tempatLahir;
+                document.getElementById("tanggalLahir").value = data.tanggalLahir;
+                document.getElementById("pekerjaan").value = data.pekerjaan;
+                document.getElementById("alamat").value = data.alamat;
+                document.getElementById("jeniskelamin").value = data.jeniskelamin;
+                document.getElementById("agama").value = data.agama;
+                document.getElementById("tanggalsurat").value = data.tanggalsurat;
+                document.getElementById("phone").value = data.phone;
+            } else {
+                alert("NIK tidak ditemukan!");
+            }
+        }
+  
+        // Fungsi untuk menyimpan data ke spreadsheet
+        function submitForm() {
+            var nama = document.getElementById("nama").value;
+            var nik = document.getElementById("nik").value;
+            var tempatLahir = document.getElementById("tempatLahir").value;
+            var tanggalLahir = document.getElementById("tanggalLahir").value;
+            var pekerjaan = document.getElementById("pekerjaan").value;
+            var alamat = document.getElementById("alamat").value;
+            var jeniskelamin = document.getElementById("jeniskelamin").value;
+            var agama = document.getElementById("agama").value;
+            var tanggalsurat = document.getElementById("tanggalsurat").value;
+            var phone = document.getElementById("phone").value;
+            google.script.run.submitForm(nama, nik, tempatLahir, tanggalLahir, pekerjaan, alamat,jeniskelamin,agama, tanggalsurat, phone);
+            alert("Terimakasih telah menginput.");
+        }
+    </script>
+    <script>
+        // Mengambil jenis surat dari sessionStorage
+        const suratType = sessionStorage.getItem('suratType');
+        
+        // Menampilkan jenis surat di card-header
+        if (suratType) {
+          document.getElementById('cardTitle').innerText = suratType;
+        } else {
+          document.getElementById('cardTitle').innerText = 'Jenis Surat Tidak Diketahui';
+        }
+      </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
