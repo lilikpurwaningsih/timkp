@@ -76,12 +76,7 @@
             color: white;
         }
 
-        .content {
-          display: flex;
-          flex: 1; /* Occupy all the available space */
-          margin: 20px;
-          width: 100%;
-        }
+        
 
         .card {
             background-color: #ffffff; /* Blue */
@@ -154,10 +149,10 @@
         <div class="sidebar">
             <img src="1.png" alt="Logo Agro Kopiko Meranti">
             <div class="admin">Admin</div>
-            <a href="#" class="menu-item"><i class="fa-solid fa-gauge"></i>Dashboard</a>
-            <a href="#" class="menu-item"><i class="fas fa-user"></i>Data Penduduk</a>
-            <a href="#" class="menu-item active"><i class="fas fa-envelope-open-text"></i>Surat</a>
-            <a href="#" class="menu-item"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            <a href="dashboard admin.html" class="menu-item"><i class="fa-solid fa-gauge"></i>Dashboard</a>
+            <a href="admin data penduduk.html" class="menu-item"><i class="fas fa-user"></i>Data Penduduk</a>
+            <a href="admin surat.html" class="menu-item active"><i class="fas fa-envelope-open-text"></i>Surat</a>
+            <a href="dashboard.html" class="menu-item"><i class="fas fa-sign-out-alt"></i>Logout</a>
         </div>
 
         <!-- Content Area -->
@@ -167,7 +162,7 @@
                     Kelola Surat
                 </div>
                 <div class="row-cards">
-                    <div class="cards">
+                    <div class="cards" onclick="location.href='admin surat diterima.html';" style="cursor: pointer;">
                         <div>
                             <p class="number" style="color: #3AB57A;">0</p>
                             <p>Surat Diterima</p>
@@ -176,7 +171,7 @@
                             <i class="fa-regular fa-file-lines custom-icon" style="color: #3AB57A;"></i>
                         </div>
                     </div>
-                    <div class="cards">
+                    <div class="cards" onclick="location.href='admin surat diproses.html';" style="cursor: pointer;">
                         <div>
                             <p class="number" style="color: #FFA34E;">0</p>
                             <p>Surat Diproses</p>
@@ -185,7 +180,7 @@
                             <i class="fa-regular fa-file-lines custom-icon" style="color: #FFA34E;"></i>
                         </div>
                     </div>
-                    <div class="cards">
+                    <div class="cards" onclick="location.href='admin surat ditolak.html';" style="cursor: pointer;">
                         <div>
                             <p class="number" style="color: #FF0000;">0</p>
                             <p>Surat Ditolak</p>
@@ -195,8 +190,6 @@
                         </div>
                     </div>
                 </div>
-                <iframe src="https://script.google.com/macros/s/AKfycbw09kmLYaxtUu_vidx5U5I8Af8wZ9xzfAyvcNzRpuzBFuaLUBRGwAaFPXKLp5SIbHsg0w/exec"
-                width="100%" height="400px"></iframe>
             </div>
           </div>
     </div>
