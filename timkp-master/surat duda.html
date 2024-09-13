@@ -210,6 +210,14 @@
                     <label class="form-label" for="namaIstri">Silahkan Masukan Nama ISTRI:</label><br>
                     <input required class="form-control form-control-md" type="text" id="namaIstri" name="namaIstri">
                   </div>
+                  <div class="mb-3" id="tanggalCeraiField" style="display: none;">
+                    <label class="form-label" for="tanggalCerai">Tanggal Cerai:</label><br>
+                    <input class="form-control form-control-md" type="date" id="tanggalCerai" name="tanggalCerai">
+                  </div>
+                  <div class="mb-3" id="aktaCeraiField" style="display: none;">
+                    <label class="form-label" for="kutipanAktacerai">Kutipan Akta Cerai:</label><br>
+                    <input class="form-control form-control-md" type="text" id="kutipanAktacerai" name="kutipanAktacerai" placeholder="contoh : Nomor 6171-KM-27042018-0020.">
+                  </div>
                   <div class="mb-3" id="tanggalMeninggalField" style="display: none;">
                     <label class="form-label" for="tanggalMeninggal">Tanggal Meninggal Dunia:</label><br>
                     <input class="form-control form-control-md" type="date" id="tanggalMeninggal" name="tanggalMeninggal">
@@ -233,15 +241,33 @@
       <script>
         function toggleFields() {
           var statusPerkawinan = document.getElementById('statusPerkawinan').value;
+          
+          var tanggalCeraiField = document.getElementById('tanggalCeraiField');
+          var aktaCeraiField = document.getElementById('aktaCeraiField');
+          
           var tanggalMeninggalField = document.getElementById('tanggalMeninggalField');
           var aktaKematianField = document.getElementById('aktaKematianField');
-    
-          if (statusPerkawinan === 'ceraiMati') {
-            // Show the fields if "Cerai Mati" is selected
+          
+          if (statusPerkawinan === 'cerai') {
+            // Show fields for "Cerai"
+            tanggalCeraiField.style.display = 'block';
+            aktaCeraiField.style.display = 'block';
+            
+            // Hide fields for "Cerai Mati"
+            tanggalMeninggalField.style.display = 'none';
+            aktaKematianField.style.display = 'none';
+          } else if (statusPerkawinan === 'ceraiMati') {
+            // Show fields for "Cerai Mati"
             tanggalMeninggalField.style.display = 'block';
             aktaKematianField.style.display = 'block';
+            
+            // Hide fields for "Cerai"
+            tanggalCeraiField.style.display = 'none';
+            aktaCeraiField.style.display = 'none';
           } else {
-            // Hide the fields if "Cerai" is selected
+            // Hide all fields if no valid option is selected
+            tanggalCeraiField.style.display = 'none';
+            aktaCeraiField.style.display = 'none';
             tanggalMeninggalField.style.display = 'none';
             aktaKematianField.style.display = 'none';
           }
