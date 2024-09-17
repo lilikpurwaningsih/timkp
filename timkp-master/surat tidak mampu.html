@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
     <html>
       <head>
         <base target="_top">
@@ -162,9 +162,9 @@
                     </h4>
                     <form id="nikForm">
                     <div class="mb-3"> 
-                        <label for="nik" style="margin-bottom: 5px; font-size: 14px;">Masukkan NIK (Nomor Induk Kependudukan):</label>
-                        <input required class="form-control form-control-md" type="text" id="nik" name="nik">
-                        <button class="btn btn-primary"  type="button" onclick="checkNIK()" style="font-size: 14px; margin-top: 5px;">Cek NIK</button>
+                        <label for="nikTua" style="margin-bottom: 5px; font-size: 14px;">Masukkan NIK (Nomor Induk Kependudukan):</label>
+                        <input required class="form-control form-control-md" type="string" id="nikAnak" name="nikAnak">
+                        <button class="btn btn-primary"  type="button" onclick="checkNIKAnak()" style="font-size: 14px; margin-top: 5px;">Cek NIK</button>
                     </div>
                 
                     <div class="row">
@@ -173,47 +173,51 @@
                       </p>
                       
                         <div class="mb-3">
-                          <label class="form-label" for="nama">Nama:</label><br>
-                          <input required class="form-control form-control-md" type="text" id="nama" name="nama">
+                          <label class="form-label" for="namaAnak">Nama:</label><br>
+                          <input required class="form-control form-control-md" type="text" id="namaAnak" name="namaAnak">
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="noKK">Nomor KK:</label><br>
-                          <input required class="form-control form-control-md" type="text" id="noKK" name="noKK">
+                          <input required class="form-control form-control-md" type="string" id="noKK" name="noKK">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label" for="tempatLahir">Tempat Lahir:</label><br>
-                          <input required class="form-control form-control-md" type="text" id="tempatLahir" name="tempatLahir">
+                          <label class="form-label" for="tempatLahirAnak">Tempat Lahir:</label><br>
+                          <input required class="form-control form-control-md" type="text" id="tempatLahirAnak" name="tempatLahirAnak">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label" for="tanggalLahir">Tanggal Lahir:</label>
-                          <input required class="form-control form-control-md"  type="date" id="tanggalLahir" name="tanggalLahir">
+                          <label class="form-label" for="tanggalLahirAnak">Tanggal Lahir:</label>
+                          <input required class="form-control form-control-md"  type="text" id="tanggalLahirAnak" name="tanggalLahirAnak">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label" for="jenisKelamin">Jenis Kelamin:</label><br>
-                          <input required class="form-control form-control-md" type="text" id="jenisKelamin" name="jenisKelamin">
+                          <label class="form-label" for="jenisKelaminAnak">Jenis Kelamin:</label><br>
+                          <input required class="form-control form-control-md" type="text" id="jenisKelaminAnak" name="jenisKelaminAnak">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label" for="agama">Agama:</label><br>
-                          <input required class="form-control form-control-md" type="text" id="agama" name="agama">
+                          <label class="form-label" for="agamaAnak">Agama:</label><br>
+                          <input required class="form-control form-control-md" type="text" id="agamaAnak" name="agamaAnak">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label" for="pekerjaan">Pekerjaan:</label><br>
-                          <input required class="form-control form-control-md" type="text" id="pekerjaan" name="pekerjaan">
+                          <label class="form-label" for="pekerjaanAnak">Pekerjaan:</label><br>
+                          <input required class="form-control form-control-md" type="text" id="pekerjaanAnak" name="pekerjaanAnak">
                       </div>
                       <div class="mb-3">
-                        <label class="form-label" for="alamat">Alamat:</label><br>
-                        <input required class="form-control form-control-md" type="text" id="alamat" name="alamat">
+                        <label class="form-label" for="alamatAnak"> Alamat:</label><br>
+                        <input required class="form-control form-control-md" type="text" id="alamatAnak" name="alamatAnak">
                       </div>
                       <div class="mb-3">
-                        <label class="form-label" for="phone">Masukkan No Hp:</label><br>
-                        <input required class="form-control form-control-md" type="string" id="phone" name="phone" placeholder="contoh : 628123456789">
+                        <label class="form-label" for="nomorRumahAnak">Nomor Rumah:</label><br>
+                        <input required class="form-control form-control-md" type="text" id="nomorRumahAnak" name="nomorRumahAnak">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label" for="phoneAnak">Masukkan No Hp:</label><br>
+                        <input required class="form-control form-control-md" type="string" id="phoneAnak" name="phoneAnak" placeholder="contoh : 628123456789">
                       </div>
                       <div class="mb-3">
                         <label class="form-label" for="tanggalPengajuan">Tanggal Pengajuan Surat:</label><br>
                         <input required class="form-control form-control-md" type="text" id="tanggalPengajuan" name="tanggalPengajuan" placeholder="contoh : 01 Januari 2024">
                       </div>
                     </div>
-                    </form>
+                   
                   </div>
               </div>
                 <div class="cards">
@@ -222,11 +226,11 @@
                         Data Orang Tua
                       </h4>
                       
-                      <form id="nikForm">
+                      
                       <div class="mb-3"> 
-                          <label for="nik" style="margin-bottom: 5px; font-size: 14px;">Masukkan NIK (Nomor Induk Kependudukan):</label>
-                          <input required class="form-control form-control-md" type="text" id="nik" name="nik">
-                          <button class="btn btn-primary"  type="button" onclick="checkNIK()" style="font-size: 14px; margin-top: 5px;">Cek NIK</button>
+                          <label for="nikTua" style="margin-bottom: 5px; font-size: 14px;">Masukkan NIK (Nomor Induk Kependudukan):</label>
+                          <input required class="form-control form-control-md" type="string" id="nikTua" name="nikTua">
+                          <button class="btn btn-primary"  type="button" onclick="checkNIKTua()" style="font-size: 14px; margin-top: 5px;">Cek NIK</button>
                       </div>
                   
                       <div class="row">
@@ -234,32 +238,36 @@
                           ⚠️ <strong>Penting:</strong> Pastikan data Orang Tua Anda yang muncul sudah benar.
                         </p>
                           <div class="mb-3">
-                            <label class="form-label" for="nama">Nama:</label>
-                            <input required class="form-control form-control-md" type="text" id="nama" name="nama">
+                            <label class="form-label" for="namaTua">Nama:</label>
+                            <input required class="form-control form-control-md" type="text" id="namaTua" name="namaTua">
                           </div>
                           <div class="mb-3">
-                            <label class="form-label" for="tempatLahir">Tempat Lahir:</label><br>
-                            <input required class="form-control form-control-md" type="text" id="tempatLahir" name="tempatLahir">
+                            <label class="form-label" for="tempatLahirTua">Tempat Lahir:</label><br>
+                            <input required class="form-control form-control-md" type="text" id="tempatLahirTua" name="tempatLahirTua">
                           </div>
                           <div class="mb-3">
-                            <label class="form-label" for="tanggalLahir">Tanggal Lahir:</label><br>
-                            <input required class="form-control form-control-md" type="date" id="tanggalLahir" name="tanggalLahir">
+                            <label class="form-label" for="tanggalLahirTua">Tanggal Lahir:</label><br>
+                            <input required class="form-control form-control-md" type="text" id="tanggalLahirTua" name="tanggalLahirTua">
                           </div>
                           <div class="mb-3">
-                            <label class="form-label" for="pekerjaan">Pekerjaan:</label><br>
-                            <input required class="form-control form-control-md" type="text" id="pekerjaan" name="pekerjaan">
+                            <label class="form-label" for="pekerjaanTua">Pekerjaan:</label><br>
+                            <input required class="form-control form-control-md" type="text" id="pekerjaanTua" name="pekerjaanTua">
                           </div>
                           <div class="mb-3">
-                            <label class="form-label" for="alamat">Alamat:</label><br>
-                            <input required class="form-control form-control-md" type="text" id="alamat" name="alamat">
+                            <label class="form-label" for="alamatTua">Alamat:</label><br>
+                            <input required class="form-control form-control-md" type="text" id="alamatTua" name="alamatTua">
                           </div>
                           <div class="mb-3">
-                            <label class="form-label" for="jenisKelamin">Jenis Kelamin:</label><br>
-                            <input required class="form-control form-control-md" type="text" id="jenisKelamin" name="jenisKelamin">
+                            <label class="form-label" for="nomorRumahTua">Nomor Rumah:</label><br>
+                            <input required class="form-control form-control-md" type="text" id="nomorRumahTua" name="nomorRumahTua">
                           </div>
                           <div class="mb-3">
-                            <label class="form-label" for="agama">Agama:</label><br>
-                            <input required class="form-control form-control-md" type="text" id="agama" name="agama">
+                            <label class="form-label" for="jenisKelaminTua">Jenis Kelamin:</label><br>
+                            <input required class="form-control form-control-md" type="text" id="jenisKelaminTua" name="jenisKelaminTua">
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label" for="agamaTua">Agama:</label><br>
+                            <input required class="form-control form-control-md" type="text" id="agamaTua" name="agamaTua">
                           </div>
                       </div>
                       </form>
@@ -278,73 +286,102 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-Jm00rjj5NcJddFsbncCOASVZHoPr5fx0M/mQgP0t9VmLkzD7SpdFW/Ny5ddzURyF" crossorigin="anonymous"></script>
       
         <base target="_top">
-      <script>
-        // Fungsi untuk memeriksa NIK dan mengisi form otomatis
-        function checkNIK() {
-          var nik = document.getElementById("nik").value;
-          google.script.run.withSuccessHandler(function(data) {
-            if (data) {
-              document.getElementById("nama").value = data.nama;
-              document.getElementById("tempatLahir").value = data.tempatLahir;
-              document.getElementById("tanggalLahir").value = data.tanggalLahir;
-              document.getElementById("pekerjaan").value = data.pekerjaan;
-              document.getElementById("alamat").value = data.alamat;
-              document.getElementById("jenisKelamin").value = data.jenisKelamin;
-              document.getElementById("agama").value = data.agama;
-              document.getElementById("statusPerkawinan").value = data.statusPerkawinan;
-              document.getElementById("phone").value = data.phone;
-            } else {
-              alert("NIK tidak ditemukan.");
-            }
-          }).getDataByNIK(nik);
-        }
-    
-        // Fungsi untuk memvalidasi form sebelum pengiriman
-        function validateForm() {
-          var requiredFields = [
-            'nik', 'nama', 'tempatLahir', 'tanggalLahir', 'pekerjaan', 
-            'alamat', 'jenisKelamin', 'agama', 'statusPerkawinan', 
-            'tanggalPengajuan', 'phone', 'namaUsaha', 'keperluanSurat'
-          ];
-    
-          for (var i = 0; i < requiredFields.length; i++) {
-            var field = document.getElementById(requiredFields[i]);
-            if (field && field.value.trim() === "") {
-              alert('Field ' + requiredFields[i] + ' harus diisi.');
-              field.focus();
-              return false;
-            }
+<script>
+  // Fungsi untuk memeriksa NIK dan mengisi form otomatis untuk Anak
+  function checkNIKAnak() {
+    var nikAnak = document.getElementById("nikAnak").value;
+    google.script.run.withSuccessHandler(function(data) {
+      if (data) {
+        document.getElementById("namaAnak").value = data.namaAnak;
+        document.getElementById("noKK").value = data.noKK;
+        document.getElementById("tempatLahirAnak").value = data.tempatLahirAnak;
+        document.getElementById("tanggalLahirAnak").value = data.tanggalLahirAnak;
+        document.getElementById("jenisKelaminAnak").value = data.jenisKelaminAnak;
+        document.getElementById("agamaAnak").value = data.agamaAnak;
+        document.getElementById("pekerjaanAnak").value = data.pekerjaanAnak;
+        document.getElementById("alamatAnak").value = data.alamatAnak;
+        document.getElementById("nomorRumahAnak").value = data.nomorRumahAnak;
+        document.getElementById("phoneAnak").value = data.phoneAnak;
+        document.getElementById("tanggalPengajuan").value = data.tanggalPengajuan;
+      } else {
+        alert("Data tidak ditemukan.");
+      }
+    }).getDataByNIKAnak(nikAnak); // Update function name here
+  }
+
+  // Fungsi untuk memeriksa NIK dan mengisi form otomatis untuk Tua
+  function checkNIKTua() {
+    var nikTua = document.getElementById("nikTua").value;
+    google.script.run.withSuccessHandler(function(data) {
+      if (data) {
+        document.getElementById("namaTua").value = data.namaTua;
+        document.getElementById("tempatLahirTua").value = data.tempatLahirTua;
+        document.getElementById("tanggalLahirTua").value = data.tanggalLahirTua;
+        document.getElementById("jenisKelaminTua").value = data.jenisKelaminTua;
+        document.getElementById("agamaTua").value = data.agamaTua;
+        document.getElementById("pekerjaanTua").value = data.pekerjaanTua;
+        document.getElementById("alamatTua").value = data.alamatTua;
+        document.getElementById("nomorRumahTua").value = data.nomorRumahTua;
+      } else {
+        alert("NIK tidak ditemukan.");
+      }
+    }).getDataByNIKTua(nikTua); // Update function name here
+  }
+
+  // Fungsi untuk mengirim data setelah validasi
+  function submitData() {
+      // List of all required input fields by their IDs
+      var requiredFields = [
+      'nikAnak', 'namaAnak', 'noKK', 'tempatLahirAnak', 'tanggalLahirAnak', 'jenisKelaminAnak', 'agamaAnak', 'pekerjaanAnak', 'alamatAnak', 'phoneAnak', 'tanggalPengajuan', 'nomorRumahAnak',
+      'nikTua', 'namaTua', 'tempatLahirTua', 'tanggalLahirTua', 'jenisKelaminTua', 'agamaTua', 'pekerjaanTua', 'alamatTua', 'nomorRumahTua'
+    ];
+      // Check if any required field is empty
+      var allFieldsFilled = requiredFields.every(function(fieldId) {
+        var field = document.getElementById(fieldId);
+        return field && field.value.trim() !== ""; // Ensure the field exists and is not empty
+      });
+
+      // If not all fields are filled, alert and do not submit
+      if (!allFieldsFilled) {
+        alert("Harap mengisi semua input yang diperlukan sebelum mengirim.");
+        return;
+      }
+    var data = {
+      nikAnak: document.getElementById("nikAnak").value,
+      namaAnak: document.getElementById("namaAnak").value,
+      noKK: document.getElementById("noKK").value,
+      tempatLahirAnak: document.getElementById("tempatLahirAnak").value,
+      tanggalLahirAnak: document.getElementById("tanggalLahirAnak").value,
+      jenisKelaminAnak: document.getElementById("jenisKelaminAnak").value,
+      agamaAnak: document.getElementById("agamaAnak").value,
+      pekerjaanAnak: document.getElementById("pekerjaanAnak").value,
+      alamatAnak: document.getElementById("alamatAnak").value,
+      nomorRumahAnak: document.getElementById("nomorRumahAnak").value,
+      phoneAnak: document.getElementById("phoneAnak").value,
+      tanggalPengajuan: document.getElementById("tanggalPengajuan").value,
+      nikTua: document.getElementById("nikTua").value,
+      namaTua: document.getElementById("namaTua").value,
+      tempatLahirTua: document.getElementById("tempatLahirTua").value,
+      tanggalLahirTua: document.getElementById("tanggalLahirTua").value,
+      jenisKelaminTua: document.getElementById("jenisKelaminTua").value,
+      agamaTua: document.getElementById("agamaTua").value,
+      pekerjaanTua: document.getElementById("pekerjaanTua").value,
+      alamatTua: document.getElementById("alamatTua").value,
+      nomorRumahTua: document.getElementById("nomorRumahTua").value,
+    };
+
+      // Memanggil submitData dan menampilkan notifikasi tanpa menampilkan link di HTML
+        google.script.run.withSuccessHandler(function(response) {
+          if (response) {
+            alert("Data berhasil ");
+          } else {
+            alert("Data berhasil dikirim");
           }
-    
-          return true;
-        }
-    
-        // Fungsi untuk mengirim data setelah validasi
-        function submitData() {
-          if (!validateForm()) {
-            return; // Jangan kirim jika validasi gagal
-          }
-    
-          var data = {
-            nik: document.getElementById("nik").value,
-            nama: document.getElementById("nama").value,
-            tempatLahir: document.getElementById("tempatLahir").value,
-            tanggalLahir: document.getElementById("tanggalLahir").value,
-            pekerjaan: document.getElementById("pekerjaan").value,
-            alamat: document.getElementById("alamat").value,
-            jenisKelamin: document.getElementById("jenisKelamin").value,
-            agama: document.getElementById("agama").value,
-            statusPerkawinan: document.getElementById("statusPerkawinan").value,
-            tanggalPengajuan: document.getElementById("tanggalPengajuan").value,
-            phone: document.getElementById("phone").value,
-            namaUsaha: document.getElementById("namaUsaha").value,
-            keperluanSurat: document.getElementById("keperluanSurat").value
-          };
-          
-          google.script.run.submitData(data);
-          alert("Data berhasil dikirim.");
-        }
-      </script>
-      
-      </body>
+        }).submitData(data);
+      }
+    </script>
+      </body>
     </html>
+
+
+
