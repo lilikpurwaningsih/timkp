@@ -156,14 +156,14 @@
             </div>
             <div class="cards">
                 <div class="cards-body text-center">
-                    <form>
+                    <form id="formPhone">
                         <div class="mb-3">
                             <label class="form-label" style="display: flex; text-align: left;">Masukkan Nomor Telepon</label>
-                            <input type="text" class="form-control form-control-sm" name="phone" style="display: flex; width: 20em;">
+                            <input type="text" class="form-control form-control-sm" name="phone" id="phone" style="display: flex; width: 20em;">
                         </div>
                         <div class="modal-footer">
                             <a href="admin surat diproses.html" type="button" class="btn btn-secondary" style="margin-right: 5px;">Batal</a>
-                            <button type="button" class="btn btn-primary">Tolak</button>
+                            <button type="submit" class="btn btn-primary">Kirim</button>
                         </div>
                     </form>
                 </div>
@@ -171,7 +171,26 @@
           </div>
         </div>
     </div>
+    <script>
+          document.getElementById('formPhone').addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah submit standar
 
+            const phone = document.getElementById('phone').value; // Mengambil nilai nomor telepon
+            const message = encodeURIComponent("Surat anda butuh perbaikan pada bagian "+"..."+" dan "+"..."+", silahkan buat surat kembali"); // Pesan template
+            
+
+            // Memanggil fungsi Apps Script (jika diperlukan)
+            google.script.run.withSuccessHandler(function(response) {
+              document.getElementById('result').innerText = response;
+            }).pindahkanDataBerdasarkanPhone(phone);
+
+            // Membuat URL WhatsApp
+            const waLink = "https://api.whatsapp.com/send?phone=" + phone + "&text=" + message;
+            
+            // Mengarahkan pengguna ke U WhatsApp
+            window.open(waLink, '_blank');
+          });
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/36e1157cf2.js" crossorigin="anonymous"></script>
     <script>
