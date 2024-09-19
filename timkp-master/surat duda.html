@@ -115,7 +115,129 @@
         
       </style>
       <body>
-        <iframe src="https://script.google.com/macros/s/AKfycbxOt59aa-fs3adW9sehVtNDVOkppcU-n6Q_ndXqQWFir6dhagEp8Y5aMdk-ohqSNE4t/exec" width="100%" height="100%"></iframe>
+        <nav class="navbar fixed-top navbar-expand-lg">
+          <div class="container-fluid justify-content-between">
+              <a class="navbar-brand" href="#">
+                  <img src="logo web.png" alt="RETE MERANTI">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="#beranda" style="padding: 6px 20px;">Beranda</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="registrasi.html" style="padding: 6px 20px;">Registrasi</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#tentang-kami" style="padding: 6px 20px;">Tentang Kami</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="btn nav-link" href="dashboard admin.html"  style="background-color: #2D83B6; border-radius: 15px; color: #ffffff; padding: 6px 30px;">Masuk</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+    
+        <div class="content">
+          <div class="card">
+          <div class="card-header" id="cardTitle">Surat Keterangan DUDA</div>
+    
+            <div class="card-body">
+              <form id="nikForm">
+              <div class="row1"> 
+                  <label for="nik" style="font-weight: 500; margin-bottom: 10px; font-size: 14px;">Masukkan NIK (Nomor Induk Kependudukan):</label>
+                  <input required class="form-control form-control-md" type="text" id="nik" name="nik">
+                  <button class="btn btn-primary"  type="button" onclick="checkNIK()" style="font-size: 14px;">Cek NIK</button>
+              </div>
+           
+              <div class="row">
+                <p style="background-color: #fff3cd; color: #856404; padding: 10px; border-left: 5px solid #ffc107; font-weight: 500; font-size: 16px; margin-top: 20px; margin-bottom: 10px;">
+                  <i class="fa-duotone fa-solid fa-triangle-exclamation" style="color: #ffc107; margin-right: 6px;" ></i><strong>Penting:</strong> Pastikan data yang muncul sudah benar.
+                </p>    
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label" for="nama">Nama:</label>
+                    <input required class="form-control form-control-md" type="text" id="nama" name="nama">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="tempatLahir">Tempat Lahir:</label><br>
+                    <input required class="form-control form-control-md" type="text" id="tempatLahir" name="tempatLahir">
+                  </div>
+                  <div class="mb-3">
+                     <label class="form-label" for="tanggalLahir">Tanggal Lahir:</label><br>
+                     <input required class="form-control form-control-md" type="text" id="tanggalLahir" name="tanggalLahir">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="jenisKelamin">Jenis Kelamin:</label><br>
+                    <input required class="form-control form-control-md" type="text" id="jenisKelamin" name="jenisKelamin">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="agama">Agama:</label><br>
+                    <input required class="form-control form-control-md" type="text" id="agama" name="agama">
+                  </div>
+                  <div class="mb-3">
+                     <label class="form-label" for="pekerjaan">Pekerjaan:</label><br>
+                     <input required class="form-control form-control-md" type="text" id="pekerjaan" name="pekerjaan">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="statusPerkawinan">Status Perkawinan:</label><br>
+                    <select required class="form-control form-control-md" id="statusPerkawinan" name="statusPerkawinan" onchange="toggleFields()">
+                      <option value="" disabled selected>Pilih Status</option>
+                      <option value="cerai">Cerai</option>
+                      <option value="ceraiMati">Cerai Mati</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="alamat">Alamat:</label><br>
+                    <input required class="form-control form-control-md" type="text" id="alamat" name="alamat">
+                  </div>
+                </div>
+    
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label" for="tanggalPengajuan">Tanggal Pengajuan Surat:</label><br>
+                    <input required class="form-control form-control-md" type="date" id="tanggalPengajuan" name="tanggalPengajuan">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="phone">Masukkan Nomor Whatsapp yang bisa dihubungi:</label><br>
+                    <input required class="form-control form-control-md" type="string" id="phone" name="phone" placeholder="contoh : 628123456789">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="namaIstri">Silahkan Masukan Nama ISTRI:</label><br>
+                    <input required class="form-control form-control-md" type="text" id="namaIstri" name="namaIstri">
+                  </div>
+                  <div class="mb-3" id="tanggalCeraiField" style="display: none;">
+                    <label class="form-label" for="tanggalCerai">Tanggal Cerai:</label><br>
+                    <input class="form-control form-control-md" type="date" id="tanggalCerai" name="tanggalCerai">
+                  </div>
+                  <div class="mb-3" id="aktaCeraiField" style="display: none;">
+                    <label class="form-label" for="kutipanAktacerai">Kutipan Akta Cerai:</label><br>
+                    <input class="form-control form-control-md" type="text" id="kutipanAktacerai" name="kutipanAktacerai" placeholder="contoh : Nomor 6171-KM-27042018-0020.">
+                  </div>
+                  <div class="mb-3" id="tanggalMeninggalField" style="display: none;">
+                    <label class="form-label" for="tanggalMeninggal">Tanggal Meninggal Dunia:</label><br>
+                    <input class="form-control form-control-md" type="date" id="tanggalMeninggal" name="tanggalMeninggal">
+                  </div>
+                  <div class="mb-3" id="aktaKematianField" style="display: none;">
+                    <label class="form-label" for="kutipanAktakematian">Kutipan Akta Kematian:</label><br>
+                    <input class="form-control form-control-md" type="text" id="kutipanAktakematian" name="kutipanAktakematian" placeholder="contoh : Nomor 6171-KM-27042018-0020.">
+                  </div>
+                </div>
+              </div>
+              <div class="text-start">
+                  <a class="btn btn-secondary" href="buat surat user2.html" role="button">Batal</a>
+                  <button style="border-radius: 5px;" class="btn btn-primary " type="button" onclick="submitData()">Kirim</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <script>
         function toggleFields() {
           var statusPerkawinan = document.getElementById('statusPerkawinan').value;
