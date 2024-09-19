@@ -13,34 +13,46 @@
       margin-top: 15px;
     }
     .navbar{
-        width: 100%;
-        background-color: #ffffff;
-        border: 1px solid #2D83B6;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        padding-top: 0;
+      background-color: #ffffff;
+      border: 1px solid #2D83B6;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      padding: 0;
     }
     .navbar img{
       width: 190px;
       margin-left: 20px;
     }
-    .menu-item {
-      margin-right: 20px;
+    .nav-link{
+        display: flex;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        color: #015C93;
+        border-radius: 15px;
+        margin: 0 5px 0 5px;
     }
-    .menu-item a {
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-      text-decoration: none;
-      color: #015C93;
-      padding: 8px 30px;
-      border-radius: 15px;
-      margin: 0;
+    .navbar-nav .nav-link:hover {
+        background-color: #2D83B6;
+        color: #ffffff;
     }
-    .menu-item a:hover {
-      background-color: #2D83B6; /* Darker Blue */
-      color: #ffffff;
+    .nav-item .btn {
+    background: linear-gradient(90deg, #2D83B6 0%, #015C93 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
     }
-    .dropdown-toggle::after {
-      display: none;
+
+    .nav-item .btn:hover {
+        background-color: #014A70; /* Sedikit lebih gelap saat hover */
+    }
+    .nav-item .btn {
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    .nav-item .btn:hover {
+        transform: scale(1.05);
     }
     .content {
         display: flex;
@@ -106,28 +118,32 @@
 
 
   <body>
-    <nav class="navbar fixed-top">
-        <div class="container-fluid">
-            <img src="logo web.png" alt="RETE MERANTI">
-            <div class="menu-item">
-                <a href="#beranda">Beranda</a>
-                <a href="#">Registrasi</a>
-                <a href="#tentang-kami">Tentang Kami</a>
-                
-                <!-- Dropdown untuk pilihan role -->
-                <div class="dropdown d-inline-block">
-                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #2D83B6; border-radius: 15px; color: #ffffff; margin-right: 20px;">
-                        Masuk
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><p style="font-weight: 600; text-align: center;">Masuk Sebagai:</p></li>
-                        <li><a class="dropdown-item" href="#">RT</a></li>
-                        <li><a class="dropdown-item" href="#">Sekretaris</a></li>
-                    </ul>
-                </div>
+      <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="logo web.png" alt="RETE MERANTI">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#beranda" style="padding: 6px 20px;">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registrasi.html" style="padding: 6px 20px;">Registrasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang-kami" style="padding: 6px 20px;">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="btn nav-link" href="dashboard admin.html"  style="background-color: #2D83B6; border-radius: 15px; color: #ffffff; padding: 6px 30px;">Masuk</a>
+                    </li>
+                </ul>
             </div>
         </div>
-      </nav>
+    </nav>
 
       <div class="content">
         <div class="card">
