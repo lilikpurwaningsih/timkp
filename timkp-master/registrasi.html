@@ -6,58 +6,95 @@
     <title>Bootstrap demo</title>
     <link rel="stylesheet" href="dashboard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <style>
     body{
       display: flex;
       justify-content: center;
       align-items: center;
+      background: linear-gradient(to bottom right, #f0f8ff, #d1eaff);
+      font-family: 'Poppins', sans-serif;
+    }
+    h1, h2, p {
+      font-weight: 600;
     }
     .navbar{
       background-color: #ffffff;
       border: 1px solid #2D83B6;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      padding-top: 0;
+      padding: 0;
     }
     .navbar img{
       width: 190px;
       margin-left: 20px;
     }
-    .menu-item {
-      margin-right: 20px;
+    .nav-link{
+        display: flex;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        color: #015C93;
+        border-radius: 15px;
+        margin: 0 5px 0 5px;
     }
-    .menu-item a {
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-      text-decoration: none;
-      color: #015C93;
-      padding: 8px 30px;
-      border-radius: 15px;
-      margin: 0;
+    .navbar-nav .nav-link:hover {
+        background-color: #2D83B6;
+        color: #ffffff;
     }
-    .menu-item a:hover {
-      background-color: #2D83B6; /* Darker Blue */
-      color: #ffffff;
-    }
-    .dropdown-toggle::after {
-      display: none;
-    }
+    
     .card{
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
       width: 28em;
       margin-top: 80px;
-      box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.228);
       align-items: center;
     }
+    .card:hover {
+      transform: none;
+    }
+    .nav-link, .btn {
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
     .card-body p{
       font-weight: 600;
       font-size: 18px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     .card-body .btn{
       display: flex;
     }
+    .mb-3, .nav-item .btn {
+    background: linear-gradient(90deg, #2D83B6 0%, #015C93 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    }
+
+    .mb-3 .btn:hover {
+        background: linear-gradient(90deg, #2D83B6 0%, #015C93 100%); /* Sedikit lebih gelap saat hover */
+        border-radius: 20px;
+    }
+    .btn {
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    border-radius: 20px;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+        border-radius: 20px;
+    }
+
     .form-control{
       border: 2px solid #d1d1d1;
+    }
+    .mb-3 {
+      margin-bottom: 20px;
     }
     .mb-3 a{
         color: #ffffff;
@@ -66,27 +103,31 @@
   </style>
 
   <body>
-    <nav class="navbar fixed-top">
-      <div class="container-fluid">
-          <img src="logo web.png" alt="RETE MERANTI">
-          <div class="menu-item">
-              <a href="#beranda">Beranda</a>
-              <a href="#">Registrasi</a>
-              <a href="#tentang-kami">Tentang Kami</a>
-              
-              <!-- Dropdown untuk pilihan role -->
-              <div class="dropdown d-inline-block">
-                  <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #2D83B6; border-radius: 15px; color: #ffffff; margin-right: 20px;">
-                      Masuk
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <li><p style="font-weight: 600; text-align: center;">Masuk Sebagai:</p></li>
-                      <li><a class="dropdown-item" href="#">RT</a></li>
-                      <li><a class="dropdown-item" href="#">Sekretaris</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="logo web.png" alt="RETE MERANTI">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="dashboard.html" style="padding: 6px 20px;">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registrasi.html" style="padding: 6px 20px;">Registrasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html#tentang-kami" style="padding: 6px 20px;">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="btn nav-link" href="dashboard admin.html"  style="background-color: #2D83B6; border-radius: 15px; color: #ffffff; padding: 6px 30px;">Masuk</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <div class="card">
@@ -94,13 +135,13 @@
           <img src="Logo Rete.png" alt="Logo Rete Meranti" style="width: 7em; max-width: 100%; margin-bottom: 20px;">
           <p>silahkan pilih status warga anda</p>
           <div class="mb-3">
-            <a href="registrasi warga tetap.html" class="btn" style="background-color: #2D83B6; justify-content: center;">warga Tetap</a>
+            <a href="registrasi warga tetap.html" class="btn" style="justify-content: center;">Daftar sebagai Warga Tetap</a>
           </div>
           <div class="mb-3">
-            <a href="registrasi warga kontrak.html" class="btn" style="background-color: #2D83B6; justify-content: center;">warga Kontrak</a>
+            <a href="registrasi warga kontrak.html" class="btn" style="justify-content: center;">Daftar sebagai Warga Kontrak</a>
           </div>
           <div class="mb-3">
-            <a href="registrasi warga indekost.html" class="btn" style="background-color: #2D83B6; justify-content: center;">warga Indekos</a>
+            <a href="registrasi warga indekost.html" class="btn" style="justify-content: center;">Daftar sebagai Warga Indekos</a>
           </div>
           <div style="display: flex; justify-content: center; margin-top: 90px; margin-bottom: 30px;">
             <a href="dashboard.html" class="btn btn-secondary" style="width: 5.7em; justify-content: center;">Kembali</a>
