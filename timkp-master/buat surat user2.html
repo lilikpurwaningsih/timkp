@@ -13,40 +13,63 @@
       background-color: #ffffff;
       border: 1px solid #2D83B6;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-      padding-top: 0;
+      padding: 0;
     }
     .navbar img{
       width: 190px;
       margin-left: 20px;
     }
-    .menu-item {
-      margin-right: 20px;
+    .nav-link{
+        display: flex;
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        color: #015C93;
+        border-radius: 15px;
+        margin: 0 5px 0 5px;
     }
-    .menu-item a {
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-      text-decoration: none;
-      color: #015C93;
-      padding: 8px 30px;
-      border-radius: 15px;
-      margin: 0;
+    .navbar-nav .nav-link:hover {
+        background-color: #2D83B6;
+        color: #ffffff;
     }
-    .menu-item a:hover {
-      background-color: #2D83B6; /* Darker Blue */
-      color: #ffffff;
+    .btn {
+    background: linear-gradient(90deg, #2D83B6 0%, #015C93 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
     }
-    .dropdown-toggle::after {
-      display: none;
+
+    .btn:hover {
+        background-color: #014A70; /* Sedikit lebih gelap saat hover */
     }
-    .container{
-      margin-top: 20vh;
+    .btn {
+    transition: transform 0.2s ease, background-color 0.3s ease;
     }
+
+    .btn:hover {
+        transform: scale(1.05);
+    }
+    .container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+}
+
+.row {
+    width: 100%; /* Memastikan setiap baris mengambil seluruh lebar kontainer */
+    display: flex;
+    justify-content: center; /* Ini akan membuat baris konten di tengah secara horizontal */
+}
+
     .fa-solid{
         font-size: 50px;
         color: #62CDD4;
     }
     .card{
         box-shadow: 0 4px 2px rgba(0, 0, 0, 0.228);
+        margin: 10px;
     }
     .card .btn{
         background-color: #2D83B6; 
@@ -59,119 +82,115 @@
   </style>
 
 <body>
-  <nav class="navbar fixed-top">
-      <div class="container-fluid">
-          <img src="logo web.png" alt="RETE MERANTI">
-          <div class="menu-item">
-              <a href="#beranda">Beranda</a>
-              <a href="#">Registrasi</a>
-              <a href="#tentang-kami">Tentang Kami</a>
-              
-              <!-- Dropdown untuk pilihan role -->
-              <div class="dropdown d-inline-block">
-                  <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #2D83B6; border-radius: 15px; color: #ffffff; margin-right: 20px;">
-                      Masuk
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <li><p style="font-weight: 600; text-align: center;">Masuk Sebagai:</p></li>
-                      <li><a class="dropdown-item" href="#">RT</a></li>
-                      <li><a class="dropdown-item" href="#">Sekretaris</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </nav>
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="logo web.png" alt="RETE MERANTI">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#beranda" style="padding: 6px 20px;">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registrasi.html" style="padding: 6px 20px;">Registrasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang-kami" style="padding: 6px 20px;">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="btn nav-link" href="dashboard admin.html"  style="background-color: #2D83B6; border-radius: 15px; color: #ffffff; padding: 6px 30px;">Masuk</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <div class="container">
-    <div class="row">
+<div class="container">
+  <div class="row">
       <div class="col-md-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <i class="fa-solid fa-envelope-open-text"></i>
-            <hr style="margin: 15px 0;">
-            <p class="card-text" style="font-weight: 500; font-size: 18px;">Surat Keterangan Domisili</p>
-            <a href="#" class="btn">Buat surat</a>
+          <div class="card">
+              <div class="card-body text-center">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                  <hr style="margin: 15px 0;">
+                  <p class="card-text" style="font-weight: 450; font-size: 17px;">Surat Keterangan Domisili</p>
+                  <a href="surat domisili.html" class="btn" onclick="setSuratType('Surat Keterangan Domisili')">Buat Surat</a>
+              </div>
           </div>
-        </div>
+      </div>
+      <div class="col-md-3">
+          <div class="card">
+              <div class="card-body text-center">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                  <hr style="margin: 15px 0;">
+                  <p class="card-text" style="font-weight: 450; font-size: 17px;">Surat Keterangan Usaha</p>
+                  <a href="surat usaha.html" class="btn" onclick="setSuratType('Surat Keterangan Usaha')">Buat Surat</a>
+              </div>
+          </div>
       </div>
       <div class="col-md-3">
         <div class="card">
-          <div class="card-body text-center">
-            <i class="fa-solid fa-envelope-open-text"></i>
-            <hr style="margin: 15px 0;">
-            <p class="card-text" style="font-weight: 500; font-size: 18px;">Surat Keterangan Domisili</p>
-            <a href="#" class="btn">Buat surat</a>
-          </div>
+            <div class="card-body text-center">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <hr style="margin: 15px 0;">
+                <p class="card-text" style="font-weight: 450; font-size: 17px;">Surat Keterangan</p>
+                <a href="surat keterangan.html" class="btn">Buat surat</a>
+            </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <i class="fa-solid fa-envelope-open-text"></i>
-            <hr style="margin: 15px 0;">
-            <p class="card-text" style="font-weight: 500; font-size: 18px;">Surat Keterangan Domisili</p>
-            <a href="#" class="btn">Buat surat</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-body text-center">
-            <i class="fa-solid fa-envelope-open-text"></i>
-            <hr style="margin: 15px 0;">
-            <p class="card-text" style="font-weight: 500; font-size: 18px;">Surat Keterangan Domisili</p>
-            <a href="#" class="btn">Buat surat</a>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="row mt-4">
-        <div class="col-md-3">
-            <div class="card">
-              <div class="card-body text-center">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body text-center">
                 <i class="fa-solid fa-envelope-open-text"></i>
                 <hr style="margin: 15px 0;">
-                <p class="card-text" style="font-weight: 500; font-size: 18px;">Surat Keterangan Domisili</p>
-                <a href="#" class="btn">Buat surat</a>
-              </div>
+                <p class="card-text" style="font-weight: 450; font-size: 17px;">Surat Keterangan Tidak Mampu</p>
+                <a href="surat tidak mampu.html" class="btn">Buat surat</a>
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body text-center">
-                <i class="fa-solid fa-envelope-open-text"></i>
-                <hr style="margin: 15px 0;">
-                <p class="card-text" style="font-weight: 500; font-size: 18px;">Surat Keterangan Domisili</p>
-                <a href="#" class="btn">Buat surat</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body text-center">
-                <i class="fa-solid fa-envelope-open-text"></i>
-                <hr style="margin: 15px 0;">
-                <p class="card-text" style="font-weight: 500; font-size: 18px;">Surat Keterangan Domisili</p>
-                <a href="#" class="btn">Buat surat</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body text-center">
-                <i class="fa-solid fa-envelope-open-text"></i>
-                <hr style="margin: 15px 0;">
-                <p class="card-text" style="font-weight: 500; font-size: 18px;">Surat Keterangan Domisili</p>
-                <a href="#" class="btn">Buat surat</a>
-              </div>
-            </div>
-          </div>
+        </div>
     </div>
   </div>
+  <div class="row mt-4">
+      <div class="col-md-5">
+          <div class="card">
+              <div class="card-body text-center">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                  <hr style="margin: 15px 0;">
+                  <p class="card-text" style="font-weight: 450; font-size: 17px;">Surat Keterangan Penghasilan Orang Tua</p>
+                  <a href="surat penghasilan orang tua.html" class="btn">Buat surat</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <hr style="margin: 15px 0;">
+                <p class="card-text" style="font-weight: 450; font-size: 17px;">Surat Keterangan Duda</p>
+                <a href="surat duda.html" class="btn">Buat surat</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <hr style="margin: 15px 0;">
+                <p class="card-text" style="font-weight: 450; font-size: 17px;">Surat Keterangan Janda</p>
+                <a href="surat janda.html" class="btn">Buat surat</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/36e1157cf2.js" crossorigin="anonymous"></script>
+
 </body>
 
 
