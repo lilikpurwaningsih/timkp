@@ -236,100 +236,27 @@
             -->
               <input type="text" id="search-input" class="form-control" style="font-size: 13px; margin-top: 10px;" placeholder="Cari Nama Penduduk...">
               <div class="table-container">
-                <table class="table table-bordered">
-                    <thead class="table-primary" style="font-size: 14px;">
-                      <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Tanggal</th>
-                        <th scope="col">Jenis Surat</th>
-                        <th scope="col">Aksi</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>John Doe</td>
-                            <td>23 Agustus 2024</td>
-                            <td>Surat Keterangan</td>
-                            <td>
-                                <div class="dropdown">
-                                    <a class="btn btn-primary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #2D83B6; border-radius: 15px;">
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <li>
-                                            <!-- Modal Trigger -->
-                                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTerimaSurat">
-                                                <i class="fa-regular fa-circle-check"></i> Terima Surat
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTolakSurat">
-                                                <i class="fa-regular fa-circle-xmark"></i> Tolak Surat
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="fa-regular fa-file-lines"></i> Perbaikan Surat
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTolakSurat">
-                                              <i class="fa-solid fa-eye"></i> Lihat Surat
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Modal -->
-                        <div class="modal fade" id="modalTerimaSurat" tabindex="-1" aria-labelledby="modalTerimaSuratLabel" aria-hidden="true" >
-                            <div class="modal-dialog" style="display: flex; width: 20em;">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="modalTerimaSuratLabel">Terima Surat</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="mb-3">
-                                                <label class="form-label" style="display: flex; text-align: left;">Masukkan NIK</label>
-                                                <input type="text" class="form-control form-control-sm" name="NIK" style="display: flex; width: 20em;">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label" style="display: flex; text-align: left;">Masukkan Nomor Surat</label>
-                                                <input type="text" class="form-control form-control-sm" name="NIK" style="display: flex; width: 20em;">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Terima</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="modal fade" id="modalTolakSurat" tabindex="-1" aria-labelledby="modalTolakSuratLabel" aria-hidden="true" >
-                            <div class="modal-dialog" style="display: flex; width: 20em;">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="modalTolakSuratLabel">Tolak Surat</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form>
-                                            <div class="mb-3">
-                                                <label class="form-label" style="display: flex; text-align: left;">Masukkan Nomor Telepon</label>
-                                                <input type="text" class="form-control form-control-sm" name="phone" style="display: flex; width: 20em;">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Tolak</button>
-                                    </div>
+                  <a style="font-weight: bold;">Surat Domisili</a>
+                <iframe src="https://script.google.com/macros/s/AKfycbxh72cDQj-JuIDAgc9bN37zRKKBolz51AFcasG-EbHp6A8sGQxcN_p3WK1ylpvH3GUPSQ/exec" frameborder="0"
+                width="100%" height="100%"></iframe>
+                <a style="font-weight: bold;">Surat Keterangan</a>
+                <iframe src="https://script.google.com/macros/s/AKfycbyxQUEhzbS0g5LdTU1-f6F4Ru8QA4dOpyE55SYDAXvekKRCNj_aK2YjDpOG9Q8JKc2A/exec" frameborder="0"
+                width="100%" height="100%"></iframe>
+                <a style="font-weight: bold;">Surat Janda</a>
+                <iframe src="https://script.google.com/macros/s/AKfycbyDGX3qt-06h7M8gtrAIshLwqgvxbLQ3YE78RgZ2PxE8YqUkAOfLsvOZUT5mHEwvQrH/exec" frameborder="0"
+                width="100%" height="100%"></iframe>
+                <a style="font-weight: bold;">Surat Duda</a>
+                <iframe src="https://script.google.com/macros/s/AKfycbyVb5P1dNk6HjWBlif3grgmojZ4877o6F6kEsPW9eaHq6XbC_IN5NriebK0vCKNLzoL/exec" frameborder="0"
+                width="100%" height="100%"></iframe>
+                <a style="font-weight: bold;">Surat Usaha</a>
+                <iframe src="https://script.google.com/macros/s/AKfycbwT6Z6nRK8Ocrr5PJxJ_ApiMWabMPGp0OGgNud28Dbnmfia8ju3XIAbUMUhF12Ravs-/exec" frameborder="0"
+                width="100%" height="100%"></iframe>
+                <a style="font-weight: bold;">Surat Keterangan Tidak Mampu</a>
+                <iframe src="https://script.google.com/macros/s/AKfycbzyDnbGnarR6DgZGqRTCZk8wK_UTus6rsPP3toG_Usnx6W5ySYHBpyDBeYBGNV5i4kFFA/exec" frameborder="0"
+                width="100%" height="100%"></iframe>
+                <a style="font-weight: bold;">Surat Penghasilan Orang Tua</a>
+                <iframe src="https://script.google.com/macros/s/AKfycbwUNibb6WZuVtfDgHdsK0NlQ3y5vqy-wfn2a6VQLUs5RCxJK3z7mkGI-vCynTRiTuX5LA/exec" frameborder="0"
+                width="100%" height="100%"></iframe>
                                 </div>
                             </div>
                         </div>
