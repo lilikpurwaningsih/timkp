@@ -105,46 +105,10 @@
           margin: 0;
           justify-content: space-between;
         }
-        .form-control {
-            display: flex;
-            width: 14em;
-            margin-bottom: 20px;
-            border: 1px solid #cbcbcb;
-            border-radius: 5px;
+        .table-container{
+          margin-top: 30px;
         }
-
-        .table-container {
-          max-height: 400px; /* Atur tinggi maksimum tabel */
-          overflow-y: auto; /* Tambahkan scroll secara vertikal */
-        }
-      
-        .cards {
-            display: flex;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            background-color: transparent;
-            border: 1px solid #000000;
-            padding: 1rem;
-            padding-bottom: 0;
-            text-align: left;
-            width: 180px;
-            color: #000000;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            justify-content: space-between;
-            flex-direction: row;
-        }
-        .number {
-            font-size: 20px;
-            margin: 0;
-        }
-        .custom-icon {
-            font-size: 3em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Agar teks dan icon sejajar secara vertikal */
-            margin: 0; /* Menghapus margin default pada elemen <p> */
-        }
+        
     </style>
 </head>
 <body>
@@ -164,33 +128,28 @@
             <div class="card-header">
               Surat Ditolak  <p style="font-size: 14px;">Hari ini : <span id="current-date"></span></p>
             </div>
-            <div class="cards">
-              <div>
-                  <p class="number" style="color: #FF0000;">0</p>
-                  <p style="font-size: 13px;">Surat Ditolak</p>
-              </div>
-              <div>
-                  <i class="fa-regular fa-file-lines custom-icon" style="color: #FF0000;"></i>
-              </div>
-            </div>
-            <!--
-            <div class="cards">
-                <div class="row-count">
-                    <span id="row-count"></span>
-                </div>
-                <p>Surat Diterima</p>
-            </div>
-            -->
-              <input type="text" id="search-input" class="form-control" style="font-size: 13px; margin-top: 10px;" placeholder="Cari Nama Penduduk...">
               <div class="table-container">
                 <table class="table table-bordered">
-                    <iframe src="https://script.google.com/macros/s/AKfycbyM_GXoChVCNpoACOkRXyoI3x6hwZwHkT3Gvr5HlT2_4pbU-ncfXXefUxRxQJklg7pQ/exec" width="100%" height="100%"></iframe>
+                    <thead class="table-primary" style="font-size: 14px;">
+                      <tr>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Jenis Surat</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                      </tr>
+                    </thead>
+                    <tbody id="table-body" style="font-size: 13px;">
+                
+                    </tbody>
                   </table>
                 </div>
                 
           </div>
         </div>
-     </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/36e1157cf2.js" crossorigin="anonymous"></script>
