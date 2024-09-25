@@ -105,99 +105,10 @@
           margin: 0;
           justify-content: space-between;
         }
-        .form-control {
-            display: flex;
-            width: 14em;
-            margin-bottom: 20px;
-            border: 1px solid #cbcbcb;
-            border-radius: 5px;
-        }
-
-        .table-container {
-          height: 400px; /* Atur tinggi maksimum tabel */
-          overflow-y: auto; /* Tambahkan scroll secara vertikal */
-        }
-      
-        .cards {
-            display: flex;
+        .table-container{
             margin-top: 30px;
-            margin-bottom: 10px;
-            background-color: transparent;
-            border: 1px solid #000000;
-            padding: 1rem;
-            padding-bottom: 0;
-            text-align: left;
-            width: 180px;
-            color: #000000;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            justify-content: space-between;
-            flex-direction: row;
-        }
-        .number {
-            font-size: 20px;
-            margin: 0;
-        }
-        .custom-icon {
-            font-size: 3em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Agar teks dan icon sejajar secara vertikal */
-            margin: 0; /* Menghapus margin default pada elemen <p> */
-        }
-        .dropdown-container {
-            position: relative;
-            display: inline-block;
         }
 
-        .dropdown-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            font-size: 14px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-            min-width: 160px;
-            z-index: 1;
-            border-radius: 5px;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown-container.show .dropdown-content {
-            display: block;
-        }
-        .dropdown-menu{
-            width: 100%;
-        }
-        .dropdown-menu a{
-            text-decoration: none;
-            color: #000000;
-            width: 100%;
-        }
-        .dropdown-menu a:hover{
-            background-color: #0056b3;
-            color: #ffffff;
-        }
-        .fa-solid{
-            padding: 4px;
-        }
     </style>
 </head>
 <body>
@@ -217,19 +128,18 @@
             <div class="card-header">
               Surat Diterima  <p style="font-size: 14px;">Hari ini : <span id="current-date"></span></p>
             </div>
-            <div class="cards">
-              <div>
-                  <p class="number" style="color: #3AB57A;">0</p>
-                  <p style="font-size: 13px;">Surat Diterima</p>
-              </div>
-              <div>
-                  <i class="fa-regular fa-file-lines custom-icon" style="color: #3AB57A;"></i>
-              </div>
-            </div>
-              <input type="text" id="search-input" class="form-control" style="font-size: 13px; margin-top: 10px;" placeholder="Cari Nama Penduduk...">
               <div class="table-container">
                 <table class="table table-bordered">
-                    <iframe src="https://script.google.com/macros/s/AKfycbymdbkHgHjolwN_Brn9dSPW_4sS2Ukxx2yP2o1yM_aUkkZbb8vfR41Qw6nsi1QdiXng/exec" width="100%" height="100%"></iframe>
+                    <thead class="table-primary" style="font-size: 14px;">
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nomor Surat</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Tanggal</th>
+                        <th scope="col">Jenis Surat</th>
+                        <th scope="col">Aksi</th>
+                      </tr>
+                    </thead>
                   </table>
                 </div>
                 
