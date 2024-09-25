@@ -105,98 +105,33 @@
           margin: 0;
           justify-content: space-between;
         }
-        .form-control {
-            display: flex;
-            width: 14em;
-            margin-bottom: 20px;
-            border: 1px solid #cbcbcb;
-            border-radius: 5px;
-        }
-
-        .table-container {
-          height: 400px; /* Atur tinggi maksimum tabel */
-          overflow-y: auto; /* Tambahkan scroll secara vertikal */
-        }
-      
-        .cards {
+        .button{
             display: flex;
             margin-top: 30px;
-            margin-bottom: 10px;
-            background-color: transparent;
-            border: 1px solid #000000;
-            padding: 1rem;
-            padding-bottom: 0;
-            text-align: left;
-            width: 180px;
-            color: #000000;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            justify-content: space-between;
-            flex-direction: row;
+            flex-direction: column;
+            text-align: center;
         }
-        .number {
-            font-size: 20px;
-            margin: 0;
-        }
-        .custom-icon {
-            font-size: 3em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Agar teks dan icon sejajar secara vertikal */
-            margin: 0; /* Menghapus margin default pada elemen <p> */
-        }
-        .dropdown-container {
-            position: relative;
-            display: inline-block;
+        .btn {
+        background: linear-gradient(90deg, #2D83B6 0%, #015C93 100%);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-weight: bold;
+        transition: background-color 0.3s ease-in-out;
+        width: fit-content;
+        margin: 10px;
         }
 
-        .dropdown-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            font-size: 14px;
-            border: none;
-            cursor: pointer;
+        .btn:hover {
+            background-color: #014A70; /* Sedikit lebih gelap saat hover */
+        }
+        .btn {
+        transition: transform 0.2s ease, background-color 0.3s ease;
         }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-            min-width: 160px;
-            z-index: 1;
-            border-radius: 5px;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown-container.show .dropdown-content {
-            display: block;
-        }
-        .dropdown-menu{
-            width: 100%;
-        }
-        .dropdown-menu a{
-            text-decoration: none;
-            color: #000000;
-            width: 100%;
-        }
-        .dropdown-menu a:hover{
-            background-color: #0056b3;
-            color: #ffffff;
-        }
-        .fa-regular{
-            padding: 4px;
+        .btn:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -217,25 +152,21 @@
             <div class="card-header">
               Surat Diproses  <p style="font-size: 14px;">Hari ini : <span id="current-date"></span></p>
             </div>
-            <div class="cards">
-              <div>
-                  <p class="number" style="color: #FFA34E;">0</p>
-                  <p style="font-size: 13px;">Surat Diproses</p>
-              </div>
-              <div>
-                  <i class="fa-regular fa-file-lines custom-icon" style="color: #FFA34E;"></i>
-              </div>
-            </div>
-            <!--
-            <div class="cards">
-                <div class="row-count">
-                    <span id="row-count"></span>
+            <div class="button">
+                <div>
+                    <a href="surat usaha diproses.html" class="btn">Surat Keterangan Usaha</a>
+                    <a href="surat keterangan diproses.html" class="btn">Surat Keterangan</a>
+                    <a href="surat duda diproses.html" class="btn">Surat Keterangan Duda</a>
+                    <a href="surat janda diproses.html" class="btn">Surat Keterangan Janda</a>
                 </div>
-                <p>Surat Diterima</p>
+                <div>
+                    <a href="surat penghasilan oang tua diproses.html" class="btn">Surat Keterangan Penghasilan Orang Tua</a>
+                    <a href="surat tidak mampu diproses.html" class="btn">Surat Keterangan Tidak Mampu</a>
+                    <a href="surat domisili diproses.html" class="btn">Surat Keterangan Domisili</a>
+                </div>
             </div>
-            -->
-              <input type="text" id="search-input" class="form-control" style="font-size: 13px; margin-top: 10px;" placeholder="Cari Nama Penduduk...">
-              <div class="table-container">
+
+              <!--<div class="table-container">
                   <a style="font-weight: bold;">Surat Domisili</a>
                 <iframe src="https://script.google.com/macros/s/AKfycbxh72cDQj-JuIDAgc9bN37zRKKBolz51AFcasG-EbHp6A8sGQxcN_p3WK1ylpvH3GUPSQ/exec" frameborder="0"
                 width="100%" height="100%"></iframe>
@@ -257,7 +188,9 @@
                 <a style="font-weight: bold;">Surat Penghasilan Orang Tua</a>
                 <iframe src="https://script.google.com/macros/s/AKfycbwUNibb6WZuVtfDgHdsK0NlQ3y5vqy-wfn2a6VQLUs5RCxJK3z7mkGI-vCynTRiTuX5LA/exec" frameborder="0"
                 width="100%" height="100%"></iframe>
-                                </div>
+                                </div>-->
+
+
                             </div>
                         </div>
                         
